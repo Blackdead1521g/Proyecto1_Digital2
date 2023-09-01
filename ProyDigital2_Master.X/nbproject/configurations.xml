@@ -6,6 +6,8 @@
                    projectFiles="true">
       <itemPath>I2C.h</itemPath>
       <itemPath>LCD8bits.h</itemPath>
+      <itemPath>USART.h</itemPath>
+      <itemPath>USART_1.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -17,6 +19,8 @@
       <itemPath>I2C.c</itemPath>
       <itemPath>LCD8bits.c</itemPath>
       <itemPath>Master_Sensores.c</itemPath>
+      <itemPath>USART.c</itemPath>
+      <itemPath>USART_1.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -1085,6 +1089,10 @@
                   value=""/>
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
       </Tool>
+      <item path="USART_1.c" ex="true" overriding="false">
+      </item>
+      <item path="USART_1.h" ex="true" overriding="false">
+      </item>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
         <property key="stack-guidance" value="false"/>

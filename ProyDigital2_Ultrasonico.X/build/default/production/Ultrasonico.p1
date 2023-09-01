@@ -577,8 +577,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Ultrasonico.c: 123:         Distancia = Obtener_Distancia();
 [e = _Distancia ( _Obtener_Distancia ..  ]
 "125
-[; ;Ultrasonico.c: 125:         if(Distancia <= 10){
-[e $ ! <= _Distancia -> -> 10 `i `ui 155  ]
+[; ;Ultrasonico.c: 125:         if(Distancia <= 5){
+[e $ ! <= _Distancia -> -> 5 `i `ui 155  ]
 {
 "126
 [; ;Ultrasonico.c: 126:             if(DC == 1){
@@ -633,8 +633,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Ultrasonico.c: 141:                 PORTD++;
 [e ++ _PORTD -> -> 1 `i `Vuc ]
 "142
-[; ;Ultrasonico.c: 142:                 _delay((unsigned long)((150)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;Ultrasonico.c: 142:                 _delay((unsigned long)((125)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 125 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "143
 [; ;Ultrasonico.c: 143:             }
 }

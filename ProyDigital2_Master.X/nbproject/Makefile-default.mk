@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=I2C.c LCD8bits.c Master_Sensores.c
+SOURCEFILES_QUOTED_IF_SPACED=I2C.c LCD8bits.c Master_Sensores.c USART.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/LCD8bits.p1 ${OBJECTDIR}/Master_Sensores.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/I2C.p1.d ${OBJECTDIR}/LCD8bits.p1.d ${OBJECTDIR}/Master_Sensores.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/LCD8bits.p1 ${OBJECTDIR}/Master_Sensores.p1 ${OBJECTDIR}/USART.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/I2C.p1.d ${OBJECTDIR}/LCD8bits.p1.d ${OBJECTDIR}/Master_Sensores.p1.d ${OBJECTDIR}/USART.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/LCD8bits.p1 ${OBJECTDIR}/Master_Sensores.p1
+OBJECTFILES=${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/LCD8bits.p1 ${OBJECTDIR}/Master_Sensores.p1 ${OBJECTDIR}/USART.p1
 
 # Source Files
-SOURCEFILES=I2C.c LCD8bits.c Master_Sensores.c
+SOURCEFILES=I2C.c LCD8bits.c Master_Sensores.c USART.c
 
 
 
@@ -112,6 +112,14 @@ ${OBJECTDIR}/Master_Sensores.p1: Master_Sensores.c  nbproject/Makefile-${CND_CON
 	@-${MV} ${OBJECTDIR}/Master_Sensores.d ${OBJECTDIR}/Master_Sensores.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Master_Sensores.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/USART.p1: USART.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/USART.p1.d 
+	@${RM} ${OBJECTDIR}/USART.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/USART.p1 USART.c 
+	@-${MV} ${OBJECTDIR}/USART.d ${OBJECTDIR}/USART.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/USART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/I2C.p1: I2C.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -136,6 +144,14 @@ ${OBJECTDIR}/Master_Sensores.p1: Master_Sensores.c  nbproject/Makefile-${CND_CON
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Master_Sensores.p1 Master_Sensores.c 
 	@-${MV} ${OBJECTDIR}/Master_Sensores.d ${OBJECTDIR}/Master_Sensores.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Master_Sensores.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/USART.p1: USART.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/USART.p1.d 
+	@${RM} ${OBJECTDIR}/USART.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/USART.p1 USART.c 
+	@-${MV} ${OBJECTDIR}/USART.d ${OBJECTDIR}/USART.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/USART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

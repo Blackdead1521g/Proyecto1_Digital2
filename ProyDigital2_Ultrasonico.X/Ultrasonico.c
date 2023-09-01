@@ -122,7 +122,7 @@ void main(void) {
         //PORTD = Bandera;
         Distancia = Obtener_Distancia(); //Cargamos el valor de la distancia del sensor en nuestra variable
         
-        if(Distancia <= 10){
+        if(Distancia <= 5){
             if(DC == 1){
                 DC = 0;
                 PORTBbits.RB0 = 1;
@@ -139,7 +139,7 @@ void main(void) {
                 PORTBbits.RB0 = 0;
                 PORTBbits.RB1 = 1;
                 PORTD++;
-                __delay_ms(150); // 
+                __delay_ms(125); // 
             }
             PORTBbits.RB0 = 0;
             PORTBbits.RB1 = 0;

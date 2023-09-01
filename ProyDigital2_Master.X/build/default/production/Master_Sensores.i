@@ -2717,6 +2717,13 @@ void Lcd_Shift_Right8(void);
 void Lcd_Shift_Left8(void);
 # 41 "Master_Sensores.c" 2
 
+# 1 "./USART.h" 1
+
+
+
+
+
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2815,28 +2822,181 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 43 "Master_Sensores.c" 2
+# 8 "./USART.h" 2
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
+# 10 "./USART.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdlib.h" 1 3
 
 
 
+
+
+
+typedef unsigned short wchar_t;
+
+
+
+
+
+
+
+typedef struct {
+ int rem;
+ int quot;
+} div_t;
+typedef struct {
+ unsigned rem;
+ unsigned quot;
+} udiv_t;
+typedef struct {
+ long quot;
+ long rem;
+} ldiv_t;
+typedef struct {
+ unsigned long quot;
+ unsigned long rem;
+} uldiv_t;
+# 65 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdlib.h" 3
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+
+
+
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+
+
+
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+# 104 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdlib.h" 3
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+# 11 "./USART.h" 2
+
+
+
+
+
+
+void string(char *str);
+char rxfunc();
+void txfunc (char data);
+void initUART (uint8_t freq);
+void BAUDSelect (uint8_t freq);
+void UART_RX_config (uint16_t baudrate);
+void UART_TX_config (uint16_t baudrate);
+void UART_write_char (char txt[]);
+char UART_read_char ();
+# 42 "Master_Sensores.c" 2
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\string.h" 1 3
+# 14 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\string.h" 3
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+# 36 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\string.h" 3
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
+# 46 "Master_Sensores.c" 2
+
+
+
+uint8_t datos = 0;
+uint8_t data = 0;
 uint8_t BANDERA = 0;
 uint8_t Bandera = 0;
 uint16_t Ultrasonico;
 uint16_t Fotoresistencia;
 uint16_t Infrarrojo;
 uint8_t contador = 0;
-char Ultra[8];
-char Foto[8];
-char Infra[8];
-# 69 "Master_Sensores.c"
+
+
+
+char Total[10] = "";
+char Ultra[4];
+char Foto[4];
+char Infra[4];
+char ultra[4];
+char foto[4];
+char infra[4];
+# 81 "Master_Sensores.c"
 void setup(void);
 
 
 
 
 
-
 void __attribute__((picinterrupt(("")))) isr(void){
+    if(PIR1bits.RCIF){
+        data = RCREG;
+
+    }
     if(INTCONbits.RBIF){
         if(PORTBbits.RB0 == 0){
             while(PORTBbits.RB0 == 0);
@@ -2854,7 +3014,29 @@ void main(void) {
     setup();
     Lcd_Init8();
     Lcd_Clear8();
+    unsigned int a;
     while(1){
+
+
+
+        if(datos == 0){
+
+            UART_write_char(strcat(foto, "f"));
+
+            datos = 1;
+        }
+        else if (datos == 1){
+
+            UART_write_char(strcat(infra, "i"));
+
+            datos = 2;
+        }
+        else if (datos == 2){
+
+            UART_write_char(strcat(Ultra, "u"));
+
+            datos = 0;
+        }
 
 
 
@@ -2862,37 +3044,51 @@ void main(void) {
         I2C_Master_Write(0x60);
         I2C_Master_Write(BANDERA);
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((300)*(8000000/4000.0)));
 
         I2C_Master_Start();
         I2C_Master_Write(0x61);
         Fotoresistencia = I2C_Master_Read(0);
+
+
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((300)*(8000000/4000.0)));
 
         I2C_Master_Start();
         I2C_Master_Write(0x70);
         I2C_Master_Write(Bandera);
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((300)*(8000000/4000.0)));
 
         I2C_Master_Start();
         I2C_Master_Write(0x71);
         Infrarrojo = I2C_Master_Read(0);
+
+
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((300)*(8000000/4000.0)));
 
         I2C_Master_Start();
         I2C_Master_Write(0x50);
         I2C_Master_Write(BANDERA);
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((300)*(8000000/4000.0)));
 
         I2C_Master_Start();
         I2C_Master_Write(0x51);
         Ultrasonico = I2C_Master_Read(0);
+
+
         I2C_Master_Stop();
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+        _delay((unsigned long)((300)*(8000000/4000.0)));
+
+
+
+
+        sprintf(ultra, "%d\r", Ultrasonico);
+        sprintf(foto, "%d\r", Fotoresistencia);
+        sprintf(infra, "%d\r", Infrarrojo);
+
 
 
 
@@ -2912,15 +3108,25 @@ void main(void) {
         Lcd_Write_String8("Infra");
 
         Lcd_Set_Cursor8(2,1);
+
+
+
         Lcd_Write_String8(Ultra);
 
         Lcd_Set_Cursor8(2,8);
+
+
+
         Lcd_Write_String8(Foto);
 
         Lcd_Set_Cursor8(2,14);
+
+
+
         Lcd_Write_String8(Infra);
 
-        _delay((unsigned long)((300)*(8000000/4000.0)));
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+
 
         BANDERA = 0;
         contador++;
@@ -2939,12 +3145,14 @@ void setup(void){
 
     TRISA = 0;
     TRISB = 0b11111111;
+    TRISC = 0b11000000;
     TRISD = 0;
     TRISE = 0;
 
 
     PORTA = 0;
     PORTB = 0;
+    PORTC = 0;
     PORTD = 0;
     PORTE = 0;
 
@@ -2958,6 +3166,8 @@ void setup(void){
     INTCONbits.RBIE = 1;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
+    UART_RX_config(9600);
+    UART_TX_config(9600);
 
     I2C_Master_Init(100000);
     return;

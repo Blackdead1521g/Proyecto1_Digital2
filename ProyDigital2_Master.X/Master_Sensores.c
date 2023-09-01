@@ -39,19 +39,31 @@
 #include <pic16f887.h>
 #include "I2C.h"
 #include "LCD8bits.h"
+#include "USART.h"
 #include <xc.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 //*****************************************************************************
 // Definición de variables
+uint8_t datos = 0;
+uint8_t data = 0;
 uint8_t BANDERA = 0;
 uint8_t Bandera = 0;
 uint16_t Ultrasonico;
 uint16_t Fotoresistencia; //Valor del LDR entero
 uint16_t Infrarrojo;
 uint8_t contador = 0;
-char Ultra[8];
-char Foto[8];
-char Infra[8];
+/*static char Ultra[] = "000";
+static char Foto[] = "000";
+static char Infra[] = "000";*/
+char Total[10] = "";
+char Ultra[4];
+char Foto[4];
+char Infra[4];
+char ultra[4];
+char foto[4];
+char infra[4];
 //*****************************************************************************
 #define _XTAL_FREQ 8000000
 #define RS RE0
@@ -69,11 +81,14 @@ char Infra[8];
 void setup(void);
 
 
-
 //*****************************************************************************
 // Código de Interrupción 
 //*****************************************************************************
 void __interrupt() isr(void){
+    if(PIR1bits.RCIF){
+        data = RCREG;
+        //string("HOLA");
+    }
     if(INTCONbits.RBIF){
         if(PORTBbits.RB0 == 0){//Incrementar minutos
             while(PORTBbits.RB0 == 0);//Incrementar minutos
@@ -91,49 +106,85 @@ void main(void) {
     setup();
     Lcd_Init8(); //Inicializamos la LCD
     Lcd_Clear8(); //Limpiamos la LCD
+    unsigned int a;
     while(1){
         //if(PORTBbits.RB0 == 0)
         //BANDERA = 0;
-
+        
+        if(datos == 0){
+            //strcat(foto, "f");
+            UART_write_char(strcat(foto, "f"));
+            //__delay_ms(100);
+            datos = 1;
+        }
+        else if (datos == 1){
+            //strcat(infra, "i");
+            UART_write_char(strcat(infra, "i"));
+            //__delay_ms(100);
+            datos = 2;
+        }
+        else if (datos == 2){
+            //strcat(ultra, "u");
+            UART_write_char(strcat(Ultra, "u"));
+            //__delay_ms(100);
+            datos = 0;
+        }
+        
+        
+        
         I2C_Master_Start(); //Le escibimos el contador al Esclavo1
         I2C_Master_Write(0x60);
         I2C_Master_Write(BANDERA);
         I2C_Master_Stop();
-        __delay_ms(100);
+        __delay_ms(300);
        
         I2C_Master_Start(); //Leemos el ADC del Esclavo1
         I2C_Master_Write(0x61);
         Fotoresistencia = I2C_Master_Read(0);
+        /*UART_write_char(foto);
+        __delay_ms(100);*/
         I2C_Master_Stop();
-        __delay_ms(100);
+        __delay_ms(300);
         
         I2C_Master_Start(); //Le escibimos el contador al Esclavo1
         I2C_Master_Write(0x70);
         I2C_Master_Write(Bandera);
         I2C_Master_Stop();
-        __delay_ms(100);
+        __delay_ms(300);
        
         I2C_Master_Start(); //Leemos el ADC del Esclavo1
         I2C_Master_Write(0x71);
         Infrarrojo = I2C_Master_Read(0);
+        //UART_write_char(infra);
+        //__delay_ms(100);
         I2C_Master_Stop();
-        __delay_ms(100);
+        __delay_ms(300);
         
         I2C_Master_Start(); //Le escibimos el contador al Esclavo1
         I2C_Master_Write(0x50);
         I2C_Master_Write(BANDERA);
         I2C_Master_Stop();
-        __delay_ms(100);
+        __delay_ms(300);
        
         I2C_Master_Start(); //Leemos el ADC del Esclavo1
         I2C_Master_Write(0x51);
         Ultrasonico = I2C_Master_Read(0);
+        //UART_write_char(ultra);
+        //__delay_ms(100);
         I2C_Master_Stop();
-        __delay_ms(100);
+        __delay_ms(300);
         
         
         
         //Pasamos cada valor leido a un string para presentarlo en la LCD
+        sprintf(ultra, "%d\r", Ultrasonico);
+        sprintf(foto, "%d\r", Fotoresistencia);
+        sprintf(infra, "%d\r", Infrarrojo);
+        
+        //Total = foto + infra + ultra;
+        /*Total[3] = infra;
+        Total[6] = ultra;*/
+        
         sprintf(Ultra, "%d", Ultrasonico);
         sprintf(Foto, "%d", Fotoresistencia);
         sprintf(Infra, "%d", Infrarrojo);
@@ -149,15 +200,25 @@ void main(void) {
         Lcd_Write_String8("Infra");
 
         Lcd_Set_Cursor8(2,1); //Definimos en donde queremos ver el ADC en la LCD
+        /*Ultra[0]= Ultrasonico / 100 + '0';
+        Ultra[1]= ((Ultrasonico % 100)/10) + '0';
+        Ultra[2]= Ultrasonico % 10 + '0';  */       // Convertir el valor a cadena
         Lcd_Write_String8(Ultra);
         
         Lcd_Set_Cursor8(2,8); //Definimos en donde queremos ver el ADC en la LCD
+        /*Foto[0]= Fotoresistencia / 100 + '0';
+        Foto[1]= ((Fotoresistencia % 100)/10) + '0';
+        Foto[2]= Fotoresistencia % 10 + '0';  */       // Convertir el valor a cadena
         Lcd_Write_String8(Foto);
         
         Lcd_Set_Cursor8(2,14); //Definimos en donde queremos ver el ADC en la LCD
+        /*Infra[0]= Infrarrojo / 100 + '0';
+        Infra[1]= ((Infrarrojo % 100)/10) + '0';
+        Infra[2]= Infrarrojo % 10 + '0';  */       // Convertir el valor a cadena
         Lcd_Write_String8(Infra);
         
-        __delay_ms(300);
+        __delay_ms(100);
+        
         
         BANDERA = 0;
         contador++;   
@@ -176,12 +237,14 @@ void setup(void){
     //Configuramos los puertos como entradas/salidas
     TRISA = 0;
     TRISB = 0b11111111;
+    TRISC = 0b11000000;
     TRISD = 0;
     TRISE = 0;
     
     //Limpiamos los puertos
     PORTA = 0;
     PORTB = 0;
+    PORTC = 0;
     PORTD = 0;
     PORTE = 0;
     
@@ -195,7 +258,41 @@ void setup(void){
     INTCONbits.RBIE = 1; //Habilitamos la interrupción en el puerto B
     INTCONbits.GIE = 1;         // Habilitamos interrupciones
     INTCONbits.PEIE = 1;        // Habilitamos interrupciones PEIE
+    UART_RX_config(9600); //Configuración de los registros para la comunicación serial
+    UART_TX_config(9600);
     
     I2C_Master_Init(100000);        // Inicializar Comunicación I2C
     return;
 }
+
+/*void initUART(void){
+    //paso 1
+    SPBRG = 25; //SPBRGH:SPBRG  = [(4Mhz/9600)/64]-1 = 12 ? real 9615.38
+    SPBRGH = 0; //%error = (9615.38-9600)/9600 * 100 = 0.16%
+    BRGH = 1;   
+    BRG16 = 0;
+    
+    //paso 2
+    CREN = 1;
+    SYNC = 0;   // TXSTAbits ? habilitar transmision & TXIF = 1
+    SPEN = 1;   //RCSTAbits ? apagar bandera TX
+    TXSTAbits.TXEN = 1; //permite transmitir
+    
+    //paso 3: habilitar los 9 bits
+    RCSTAbits.RX9 = 0;
+    
+    //paso 4
+    TXEN = 1; //TXSTAbits -> habilitar transmision & TXIF = 1
+    TXIF = 0; //PIRbits -> apagar bandera TX
+    //C
+    
+    //paso 5: interrupciones
+    PIE1bits.RCIE = 1; //Habilitamos interrupción de RCIF
+    PIR1bits.RCIF = 0; //Limpiamos bandera del RCIF
+
+    
+    
+    //paso 6: cargar 9no bit
+    //paso 7: cargar 
+    //return;
+}*/

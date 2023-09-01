@@ -1,7 +1,21 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
-"466 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+"544 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 544:     struct {
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"543
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 543: typedef union {
+[u S18 `S19 1 ]
+[n S18 . . ]
+"554
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 554: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
+[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
+"1141
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1141: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
+[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
+"466
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 466:     struct {
 [s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
@@ -28,8 +42,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 246: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
 [v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
 [p mainexit ]
-"69 Master_Sensores.c
-[; ;Master_Sensores.c: 69: void setup(void);
+"81 Master_Sensores.c
+[; ;Master_Sensores.c: 81: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
 "52 ./LCD8bits.h
 [; ;./LCD8bits.h: 52: void Lcd_Init8(void);
@@ -37,6 +51,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "48
 [; ;./LCD8bits.h: 48: void Lcd_Clear8(void);
 [v _Lcd_Clear8 `(v ~T0 @X0 0 ef ]
+"24 ./USART.h
+[; ;./USART.h: 24: void UART_write_char (char txt[]);
+[v _UART_write_char `(v ~T0 @X0 0 ef1`*uc ]
+"36 C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\string.h: 36: extern char * strcat(char *, const char *);
+[v _strcat `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
 "41 ./I2C.h
 [; ;./I2C.h: 41: void I2C_Master_Start(void);
 [v _I2C_Master_Start `(v ~T0 @X0 0 ef ]
@@ -76,6 +96,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1479
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1479: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"1541
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1541: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
 "1603
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1603: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
@@ -85,6 +108,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "229
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 229: extern volatile unsigned char PORTB __attribute__((address(0x006)));
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"291
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 291: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "353
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 353: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
@@ -124,6 +150,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1883
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 1883: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x08F)));
 [v _OSCCONbits `VS69 ~T0 @X0 0 e@143 ]
+"22 ./USART.h
+[; ;./USART.h: 22: void UART_RX_config (uint16_t baudrate);
+[v _UART_RX_config `(v ~T0 @X0 0 ef1`ui ]
+"23
+[; ;./USART.h: 23: void UART_TX_config (uint16_t baudrate);
+[v _UART_TX_config `(v ~T0 @X0 0 ef1`ui ]
 "29 ./I2C.h
 [; ;./I2C.h: 29: void I2C_Master_Init(const unsigned long c);
 [v _I2C_Master_Init `(v ~T0 @X0 0 ef1`Cul ]
@@ -385,345 +417,461 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3547
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h: 3547: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"46 Master_Sensores.c
-[; ;Master_Sensores.c: 46: uint8_t BANDERA = 0;
+"49 Master_Sensores.c
+[; ;Master_Sensores.c: 49: uint8_t datos = 0;
+[v _datos `uc ~T0 @X0 1 e ]
+[i _datos
+-> -> 0 `i `uc
+]
+"50
+[; ;Master_Sensores.c: 50: uint8_t data = 0;
+[v _data `uc ~T0 @X0 1 e ]
+[i _data
+-> -> 0 `i `uc
+]
+"51
+[; ;Master_Sensores.c: 51: uint8_t BANDERA = 0;
 [v _BANDERA `uc ~T0 @X0 1 e ]
 [i _BANDERA
 -> -> 0 `i `uc
 ]
-"47
-[; ;Master_Sensores.c: 47: uint8_t Bandera = 0;
+"52
+[; ;Master_Sensores.c: 52: uint8_t Bandera = 0;
 [v _Bandera `uc ~T0 @X0 1 e ]
 [i _Bandera
 -> -> 0 `i `uc
 ]
-"48
-[; ;Master_Sensores.c: 48: uint16_t Ultrasonico;
+"53
+[; ;Master_Sensores.c: 53: uint16_t Ultrasonico;
 [v _Ultrasonico `ui ~T0 @X0 1 e ]
-"49
-[; ;Master_Sensores.c: 49: uint16_t Fotoresistencia;
+"54
+[; ;Master_Sensores.c: 54: uint16_t Fotoresistencia;
 [v _Fotoresistencia `ui ~T0 @X0 1 e ]
-"50
-[; ;Master_Sensores.c: 50: uint16_t Infrarrojo;
+"55
+[; ;Master_Sensores.c: 55: uint16_t Infrarrojo;
 [v _Infrarrojo `ui ~T0 @X0 1 e ]
-"51
-[; ;Master_Sensores.c: 51: uint8_t contador = 0;
+"56
+[; ;Master_Sensores.c: 56: uint8_t contador = 0;
 [v _contador `uc ~T0 @X0 1 e ]
 [i _contador
 -> -> 0 `i `uc
 ]
-"52
-[; ;Master_Sensores.c: 52: char Ultra[8];
-[v _Ultra `uc ~T0 @X0 -> 8 `i e ]
-"53
-[; ;Master_Sensores.c: 53: char Foto[8];
-[v _Foto `uc ~T0 @X0 -> 8 `i e ]
-"54
-[; ;Master_Sensores.c: 54: char Infra[8];
-[v _Infra `uc ~T0 @X0 -> 8 `i e ]
+"60
+[; ;Master_Sensores.c: 60: char Total[10] = "";
+[v _Total `uc ~T0 @X0 -> 10 `i e ]
+[i _Total
+:U ..
+-> 0 `c
+..
+]
+"61
+[; ;Master_Sensores.c: 61: char Ultra[4];
+[v _Ultra `uc ~T0 @X0 -> 4 `i e ]
+"62
+[; ;Master_Sensores.c: 62: char Foto[4];
+[v _Foto `uc ~T0 @X0 -> 4 `i e ]
+"63
+[; ;Master_Sensores.c: 63: char Infra[4];
+[v _Infra `uc ~T0 @X0 -> 4 `i e ]
+"64
+[; ;Master_Sensores.c: 64: char ultra[4];
+[v _ultra `uc ~T0 @X0 -> 4 `i e ]
+"65
+[; ;Master_Sensores.c: 65: char foto[4];
+[v _foto `uc ~T0 @X0 -> 4 `i e ]
+"66
+[; ;Master_Sensores.c: 66: char infra[4];
+[v _infra `uc ~T0 @X0 -> 4 `i e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"76
-[; ;Master_Sensores.c: 76: void __attribute__((picinterrupt(("")))) isr(void){
+"87
+[; ;Master_Sensores.c: 87: void __attribute__((picinterrupt(("")))) isr(void){
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"77
-[; ;Master_Sensores.c: 77:     if(INTCONbits.RBIF){
-[e $ ! != -> . . _INTCONbits 0 0 `i -> 0 `i 140  ]
+"88
+[; ;Master_Sensores.c: 88:     if(PIR1bits.RCIF){
+[e $ ! != -> . . _PIR1bits 0 5 `i -> 0 `i 144  ]
 {
-"78
-[; ;Master_Sensores.c: 78:         if(PORTBbits.RB0 == 0){
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 141  ]
-{
-"79
-[; ;Master_Sensores.c: 79:             while(PORTBbits.RB0 == 0);
-[e $U 142  ]
-[e :U 143 ]
-[e :U 142 ]
-[e $ == -> . . _PORTBbits 0 0 `i -> 0 `i 143  ]
+"89
+[; ;Master_Sensores.c: 89:         data = RCREG;
+[e = _data _RCREG ]
+"91
+[; ;Master_Sensores.c: 91:     }
+}
 [e :U 144 ]
-"80
-[; ;Master_Sensores.c: 80:             BANDERA = 255;
+"92
+[; ;Master_Sensores.c: 92:     if(INTCONbits.RBIF){
+[e $ ! != -> . . _INTCONbits 0 0 `i -> 0 `i 145  ]
+{
+"93
+[; ;Master_Sensores.c: 93:         if(PORTBbits.RB0 == 0){
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 146  ]
+{
+"94
+[; ;Master_Sensores.c: 94:             while(PORTBbits.RB0 == 0);
+[e $U 147  ]
+[e :U 148 ]
+[e :U 147 ]
+[e $ == -> . . _PORTBbits 0 0 `i -> 0 `i 148  ]
+[e :U 149 ]
+"95
+[; ;Master_Sensores.c: 95:             BANDERA = 255;
 [e = _BANDERA -> -> 255 `i `uc ]
-"81
-[; ;Master_Sensores.c: 81:             Bandera = 255;
+"96
+[; ;Master_Sensores.c: 96:             Bandera = 255;
 [e = _Bandera -> -> 255 `i `uc ]
-"82
-[; ;Master_Sensores.c: 82:         }
+"97
+[; ;Master_Sensores.c: 97:         }
 }
-[e :U 141 ]
-"83
-[; ;Master_Sensores.c: 83:         INTCONbits.RBIF = 0;
+[e :U 146 ]
+"98
+[; ;Master_Sensores.c: 98:         INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"84
-[; ;Master_Sensores.c: 84:     }
+"99
+[; ;Master_Sensores.c: 99:     }
 }
-[e :U 140 ]
-"85
-[; ;Master_Sensores.c: 85:     return;
-[e $UE 139  ]
-"86
-[; ;Master_Sensores.c: 86: }
-[e :UE 139 ]
+[e :U 145 ]
+"100
+[; ;Master_Sensores.c: 100:     return;
+[e $UE 143  ]
+"101
+[; ;Master_Sensores.c: 101: }
+[e :UE 143 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"90
-[; ;Master_Sensores.c: 90: void main(void) {
+"105
+[; ;Master_Sensores.c: 105: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"91
-[; ;Master_Sensores.c: 91:     setup();
-[e ( _setup ..  ]
-"92
-[; ;Master_Sensores.c: 92:     Lcd_Init8();
-[e ( _Lcd_Init8 ..  ]
-"93
-[; ;Master_Sensores.c: 93:     Lcd_Clear8();
-[e ( _Lcd_Clear8 ..  ]
-"94
-[; ;Master_Sensores.c: 94:     while(1){
-[e :U 147 ]
-{
-"98
-[; ;Master_Sensores.c: 98:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"99
-[; ;Master_Sensores.c: 99:         I2C_Master_Write(0x60);
-[e ( _I2C_Master_Write (1 -> -> 96 `i `ui ]
-"100
-[; ;Master_Sensores.c: 100:         I2C_Master_Write(BANDERA);
-[e ( _I2C_Master_Write (1 -> _BANDERA `ui ]
-"101
-[; ;Master_Sensores.c: 101:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"102
-[; ;Master_Sensores.c: 102:         _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"104
-[; ;Master_Sensores.c: 104:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"105
-[; ;Master_Sensores.c: 105:         I2C_Master_Write(0x61);
-[e ( _I2C_Master_Write (1 -> -> 97 `i `ui ]
 "106
-[; ;Master_Sensores.c: 106:         Fotoresistencia = I2C_Master_Read(0);
-[e = _Fotoresistencia -> ( _I2C_Master_Read (1 -> -> 0 `i `us `ui ]
+[; ;Master_Sensores.c: 106:     setup();
+[e ( _setup ..  ]
 "107
-[; ;Master_Sensores.c: 107:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
+[; ;Master_Sensores.c: 107:     Lcd_Init8();
+[e ( _Lcd_Init8 ..  ]
 "108
-[; ;Master_Sensores.c: 108:         _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"110
-[; ;Master_Sensores.c: 110:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"111
-[; ;Master_Sensores.c: 111:         I2C_Master_Write(0x70);
-[e ( _I2C_Master_Write (1 -> -> 112 `i `ui ]
-"112
-[; ;Master_Sensores.c: 112:         I2C_Master_Write(Bandera);
-[e ( _I2C_Master_Write (1 -> _Bandera `ui ]
-"113
-[; ;Master_Sensores.c: 113:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"114
-[; ;Master_Sensores.c: 114:         _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"116
-[; ;Master_Sensores.c: 116:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"117
-[; ;Master_Sensores.c: 117:         I2C_Master_Write(0x71);
-[e ( _I2C_Master_Write (1 -> -> 113 `i `ui ]
-"118
-[; ;Master_Sensores.c: 118:         Infrarrojo = I2C_Master_Read(0);
-[e = _Infrarrojo -> ( _I2C_Master_Read (1 -> -> 0 `i `us `ui ]
-"119
-[; ;Master_Sensores.c: 119:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"120
-[; ;Master_Sensores.c: 120:         _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"122
-[; ;Master_Sensores.c: 122:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"123
-[; ;Master_Sensores.c: 123:         I2C_Master_Write(0x50);
-[e ( _I2C_Master_Write (1 -> -> 80 `i `ui ]
-"124
-[; ;Master_Sensores.c: 124:         I2C_Master_Write(BANDERA);
-[e ( _I2C_Master_Write (1 -> _BANDERA `ui ]
-"125
-[; ;Master_Sensores.c: 125:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"126
-[; ;Master_Sensores.c: 126:         _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"128
-[; ;Master_Sensores.c: 128:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"129
-[; ;Master_Sensores.c: 129:         I2C_Master_Write(0x51);
-[e ( _I2C_Master_Write (1 -> -> 81 `i `ui ]
-"130
-[; ;Master_Sensores.c: 130:         Ultrasonico = I2C_Master_Read(0);
-[e = _Ultrasonico -> ( _I2C_Master_Read (1 -> -> 0 `i `us `ui ]
-"131
-[; ;Master_Sensores.c: 131:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"132
-[; ;Master_Sensores.c: 132:         _delay((unsigned long)((100)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"137
-[; ;Master_Sensores.c: 137:         sprintf(Ultra, "%d", Ultrasonico);
-[e ( _sprintf (1 , (. , &U _Ultra :s 1C _Ultrasonico ]
-"138
-[; ;Master_Sensores.c: 138:         sprintf(Foto, "%d", Fotoresistencia);
-[e ( _sprintf (1 , (. , &U _Foto :s 2C _Fotoresistencia ]
-"139
-[; ;Master_Sensores.c: 139:         sprintf(Infra, "%d", Infrarrojo);
-[e ( _sprintf (1 , (. , &U _Infra :s 3C _Infrarrojo ]
-"141
-[; ;Master_Sensores.c: 141:         Lcd_Clear8();
+[; ;Master_Sensores.c: 108:     Lcd_Clear8();
 [e ( _Lcd_Clear8 ..  ]
-"142
-[; ;Master_Sensores.c: 142:         Lcd_Set_Cursor8(1,1);
-[e ( _Lcd_Set_Cursor8 (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"143
-[; ;Master_Sensores.c: 143:         Lcd_Write_String8("Ultra");
-[e ( _Lcd_Write_String8 (1 :s 4C ]
-"145
-[; ;Master_Sensores.c: 145:         Lcd_Set_Cursor8(1,8);
-[e ( _Lcd_Set_Cursor8 (2 , -> -> 1 `i `uc -> -> 8 `i `uc ]
-"146
-[; ;Master_Sensores.c: 146:         Lcd_Write_String8("Foto");
-[e ( _Lcd_Write_String8 (1 :s 5C ]
-"148
-[; ;Master_Sensores.c: 148:         Lcd_Set_Cursor8(1,14);
-[e ( _Lcd_Set_Cursor8 (2 , -> -> 1 `i `uc -> -> 14 `i `uc ]
-"149
-[; ;Master_Sensores.c: 149:         Lcd_Write_String8("Infra");
-[e ( _Lcd_Write_String8 (1 :s 6C ]
-"151
-[; ;Master_Sensores.c: 151:         Lcd_Set_Cursor8(2,1);
-[e ( _Lcd_Set_Cursor8 (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"152
-[; ;Master_Sensores.c: 152:         Lcd_Write_String8(Ultra);
-[e ( _Lcd_Write_String8 (1 &U _Ultra ]
-"154
-[; ;Master_Sensores.c: 154:         Lcd_Set_Cursor8(2,8);
-[e ( _Lcd_Set_Cursor8 (2 , -> -> 2 `i `uc -> -> 8 `i `uc ]
-"155
-[; ;Master_Sensores.c: 155:         Lcd_Write_String8(Foto);
-[e ( _Lcd_Write_String8 (1 &U _Foto ]
-"157
-[; ;Master_Sensores.c: 157:         Lcd_Set_Cursor8(2,14);
-[e ( _Lcd_Set_Cursor8 (2 , -> -> 2 `i `uc -> -> 14 `i `uc ]
-"158
-[; ;Master_Sensores.c: 158:         Lcd_Write_String8(Infra);
-[e ( _Lcd_Write_String8 (1 &U _Infra ]
-"160
-[; ;Master_Sensores.c: 160:         _delay((unsigned long)((300)*(8000000/4000.0)));
+"109
+[; ;Master_Sensores.c: 109:     unsigned int a;
+[v _a `ui ~T0 @X0 1 a ]
+"110
+[; ;Master_Sensores.c: 110:     while(1){
+[e :U 152 ]
+{
+"114
+[; ;Master_Sensores.c: 114:         if(datos == 0){
+[e $ ! == -> _datos `i -> 0 `i 154  ]
+{
+"116
+[; ;Master_Sensores.c: 116:             UART_write_char(strcat(foto, "f"));
+[e ( _UART_write_char (1 ( _strcat (2 , &U _foto :s 1C ]
+"118
+[; ;Master_Sensores.c: 118:             datos = 1;
+[e = _datos -> -> 1 `i `uc ]
+"119
+[; ;Master_Sensores.c: 119:         }
+}
+[e $U 155  ]
+"120
+[; ;Master_Sensores.c: 120:         else if (datos == 1){
+[e :U 154 ]
+[e $ ! == -> _datos `i -> 1 `i 156  ]
+{
+"122
+[; ;Master_Sensores.c: 122:             UART_write_char(strcat(infra, "i"));
+[e ( _UART_write_char (1 ( _strcat (2 , &U _infra :s 2C ]
+"124
+[; ;Master_Sensores.c: 124:             datos = 2;
+[e = _datos -> -> 2 `i `uc ]
+"125
+[; ;Master_Sensores.c: 125:         }
+}
+[e $U 157  ]
+"126
+[; ;Master_Sensores.c: 126:         else if (datos == 2){
+[e :U 156 ]
+[e $ ! == -> _datos `i -> 2 `i 158  ]
+{
+"128
+[; ;Master_Sensores.c: 128:             UART_write_char(strcat(Ultra, "u"));
+[e ( _UART_write_char (1 ( _strcat (2 , &U _Ultra :s 3C ]
+"130
+[; ;Master_Sensores.c: 130:             datos = 0;
+[e = _datos -> -> 0 `i `uc ]
+"131
+[; ;Master_Sensores.c: 131:         }
+}
+[e :U 158 ]
+[e :U 157 ]
+[e :U 155 ]
+"135
+[; ;Master_Sensores.c: 135:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"136
+[; ;Master_Sensores.c: 136:         I2C_Master_Write(0x60);
+[e ( _I2C_Master_Write (1 -> -> 96 `i `ui ]
+"137
+[; ;Master_Sensores.c: 137:         I2C_Master_Write(BANDERA);
+[e ( _I2C_Master_Write (1 -> _BANDERA `ui ]
+"138
+[; ;Master_Sensores.c: 138:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"139
+[; ;Master_Sensores.c: 139:         _delay((unsigned long)((300)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"162
-[; ;Master_Sensores.c: 162:         BANDERA = 0;
-[e = _BANDERA -> -> 0 `i `uc ]
+"141
+[; ;Master_Sensores.c: 141:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"142
+[; ;Master_Sensores.c: 142:         I2C_Master_Write(0x61);
+[e ( _I2C_Master_Write (1 -> -> 97 `i `ui ]
+"143
+[; ;Master_Sensores.c: 143:         Fotoresistencia = I2C_Master_Read(0);
+[e = _Fotoresistencia -> ( _I2C_Master_Read (1 -> -> 0 `i `us `ui ]
+"146
+[; ;Master_Sensores.c: 146:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"147
+[; ;Master_Sensores.c: 147:         _delay((unsigned long)((300)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"149
+[; ;Master_Sensores.c: 149:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"150
+[; ;Master_Sensores.c: 150:         I2C_Master_Write(0x70);
+[e ( _I2C_Master_Write (1 -> -> 112 `i `ui ]
+"151
+[; ;Master_Sensores.c: 151:         I2C_Master_Write(Bandera);
+[e ( _I2C_Master_Write (1 -> _Bandera `ui ]
+"152
+[; ;Master_Sensores.c: 152:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"153
+[; ;Master_Sensores.c: 153:         _delay((unsigned long)((300)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"155
+[; ;Master_Sensores.c: 155:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"156
+[; ;Master_Sensores.c: 156:         I2C_Master_Write(0x71);
+[e ( _I2C_Master_Write (1 -> -> 113 `i `ui ]
+"157
+[; ;Master_Sensores.c: 157:         Infrarrojo = I2C_Master_Read(0);
+[e = _Infrarrojo -> ( _I2C_Master_Read (1 -> -> 0 `i `us `ui ]
+"160
+[; ;Master_Sensores.c: 160:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"161
+[; ;Master_Sensores.c: 161:         _delay((unsigned long)((300)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "163
-[; ;Master_Sensores.c: 163:         contador++;
-[e ++ _contador -> -> 1 `i `uc ]
+[; ;Master_Sensores.c: 163:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
 "164
-[; ;Master_Sensores.c: 164:         PORTA = Ultrasonico;
-[e = _PORTA -> _Ultrasonico `uc ]
+[; ;Master_Sensores.c: 164:         I2C_Master_Write(0x50);
+[e ( _I2C_Master_Write (1 -> -> 80 `i `ui ]
+"165
+[; ;Master_Sensores.c: 165:         I2C_Master_Write(BANDERA);
+[e ( _I2C_Master_Write (1 -> _BANDERA `ui ]
 "166
-[; ;Master_Sensores.c: 166:     }
-}
-[e :U 146 ]
-[e $U 147  ]
-[e :U 148 ]
+[; ;Master_Sensores.c: 166:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
 "167
-[; ;Master_Sensores.c: 167:     return;
-[e $UE 145  ]
-"168
-[; ;Master_Sensores.c: 168: }
-[e :UE 145 ]
+[; ;Master_Sensores.c: 167:         _delay((unsigned long)((300)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"169
+[; ;Master_Sensores.c: 169:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"170
+[; ;Master_Sensores.c: 170:         I2C_Master_Write(0x51);
+[e ( _I2C_Master_Write (1 -> -> 81 `i `ui ]
+"171
+[; ;Master_Sensores.c: 171:         Ultrasonico = I2C_Master_Read(0);
+[e = _Ultrasonico -> ( _I2C_Master_Read (1 -> -> 0 `i `us `ui ]
+"174
+[; ;Master_Sensores.c: 174:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"175
+[; ;Master_Sensores.c: 175:         _delay((unsigned long)((300)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"180
+[; ;Master_Sensores.c: 180:         sprintf(ultra, "%d\r", Ultrasonico);
+[e ( _sprintf (1 , (. , &U _ultra :s 4C _Ultrasonico ]
+"181
+[; ;Master_Sensores.c: 181:         sprintf(foto, "%d\r", Fotoresistencia);
+[e ( _sprintf (1 , (. , &U _foto :s 5C _Fotoresistencia ]
+"182
+[; ;Master_Sensores.c: 182:         sprintf(infra, "%d\r", Infrarrojo);
+[e ( _sprintf (1 , (. , &U _infra :s 6C _Infrarrojo ]
+"188
+[; ;Master_Sensores.c: 188:         sprintf(Ultra, "%d", Ultrasonico);
+[e ( _sprintf (1 , (. , &U _Ultra :s 7C _Ultrasonico ]
+"189
+[; ;Master_Sensores.c: 189:         sprintf(Foto, "%d", Fotoresistencia);
+[e ( _sprintf (1 , (. , &U _Foto :s 8C _Fotoresistencia ]
+"190
+[; ;Master_Sensores.c: 190:         sprintf(Infra, "%d", Infrarrojo);
+[e ( _sprintf (1 , (. , &U _Infra :s 9C _Infrarrojo ]
+"192
+[; ;Master_Sensores.c: 192:         Lcd_Clear8();
+[e ( _Lcd_Clear8 ..  ]
+"193
+[; ;Master_Sensores.c: 193:         Lcd_Set_Cursor8(1,1);
+[e ( _Lcd_Set_Cursor8 (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"194
+[; ;Master_Sensores.c: 194:         Lcd_Write_String8("Ultra");
+[e ( _Lcd_Write_String8 (1 :s 10C ]
+"196
+[; ;Master_Sensores.c: 196:         Lcd_Set_Cursor8(1,8);
+[e ( _Lcd_Set_Cursor8 (2 , -> -> 1 `i `uc -> -> 8 `i `uc ]
+"197
+[; ;Master_Sensores.c: 197:         Lcd_Write_String8("Foto");
+[e ( _Lcd_Write_String8 (1 :s 11C ]
+"199
+[; ;Master_Sensores.c: 199:         Lcd_Set_Cursor8(1,14);
+[e ( _Lcd_Set_Cursor8 (2 , -> -> 1 `i `uc -> -> 14 `i `uc ]
+"200
+[; ;Master_Sensores.c: 200:         Lcd_Write_String8("Infra");
+[e ( _Lcd_Write_String8 (1 :s 12C ]
+"202
+[; ;Master_Sensores.c: 202:         Lcd_Set_Cursor8(2,1);
+[e ( _Lcd_Set_Cursor8 (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"206
+[; ;Master_Sensores.c: 206:         Lcd_Write_String8(Ultra);
+[e ( _Lcd_Write_String8 (1 &U _Ultra ]
+"208
+[; ;Master_Sensores.c: 208:         Lcd_Set_Cursor8(2,8);
+[e ( _Lcd_Set_Cursor8 (2 , -> -> 2 `i `uc -> -> 8 `i `uc ]
+"212
+[; ;Master_Sensores.c: 212:         Lcd_Write_String8(Foto);
+[e ( _Lcd_Write_String8 (1 &U _Foto ]
+"214
+[; ;Master_Sensores.c: 214:         Lcd_Set_Cursor8(2,14);
+[e ( _Lcd_Set_Cursor8 (2 , -> -> 2 `i `uc -> -> 14 `i `uc ]
+"218
+[; ;Master_Sensores.c: 218:         Lcd_Write_String8(Infra);
+[e ( _Lcd_Write_String8 (1 &U _Infra ]
+"220
+[; ;Master_Sensores.c: 220:         _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"223
+[; ;Master_Sensores.c: 223:         BANDERA = 0;
+[e = _BANDERA -> -> 0 `i `uc ]
+"224
+[; ;Master_Sensores.c: 224:         contador++;
+[e ++ _contador -> -> 1 `i `uc ]
+"225
+[; ;Master_Sensores.c: 225:         PORTA = Ultrasonico;
+[e = _PORTA -> _Ultrasonico `uc ]
+"227
+[; ;Master_Sensores.c: 227:     }
 }
-"172
-[; ;Master_Sensores.c: 172: void setup(void){
+[e :U 151 ]
+[e $U 152  ]
+[e :U 153 ]
+"228
+[; ;Master_Sensores.c: 228:     return;
+[e $UE 150  ]
+"229
+[; ;Master_Sensores.c: 229: }
+[e :UE 150 ]
+}
+"233
+[; ;Master_Sensores.c: 233: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"173
-[; ;Master_Sensores.c: 173:     ANSEL = 0;
+"234
+[; ;Master_Sensores.c: 234:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"174
-[; ;Master_Sensores.c: 174:     ANSELH = 0;
+"235
+[; ;Master_Sensores.c: 235:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"177
-[; ;Master_Sensores.c: 177:     TRISA = 0;
+"238
+[; ;Master_Sensores.c: 238:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"178
-[; ;Master_Sensores.c: 178:     TRISB = 0b11111111;
+"239
+[; ;Master_Sensores.c: 239:     TRISB = 0b11111111;
 [e = _TRISB -> -> 255 `i `uc ]
-"179
-[; ;Master_Sensores.c: 179:     TRISD = 0;
+"240
+[; ;Master_Sensores.c: 240:     TRISC = 0b11000000;
+[e = _TRISC -> -> 192 `i `uc ]
+"241
+[; ;Master_Sensores.c: 241:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"180
-[; ;Master_Sensores.c: 180:     TRISE = 0;
+"242
+[; ;Master_Sensores.c: 242:     TRISE = 0;
 [e = _TRISE -> -> 0 `i `uc ]
-"183
-[; ;Master_Sensores.c: 183:     PORTA = 0;
+"245
+[; ;Master_Sensores.c: 245:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"184
-[; ;Master_Sensores.c: 184:     PORTB = 0;
+"246
+[; ;Master_Sensores.c: 246:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"185
-[; ;Master_Sensores.c: 185:     PORTD = 0;
+"247
+[; ;Master_Sensores.c: 247:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"248
+[; ;Master_Sensores.c: 248:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"186
-[; ;Master_Sensores.c: 186:     PORTE = 0;
+"249
+[; ;Master_Sensores.c: 249:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
-"188
-[; ;Master_Sensores.c: 188:     OPTION_REGbits.nRBPU = 0;
+"251
+[; ;Master_Sensores.c: 251:     OPTION_REGbits.nRBPU = 0;
 [e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
-"189
-[; ;Master_Sensores.c: 189:     IOCB = 0b11111111;
+"252
+[; ;Master_Sensores.c: 252:     IOCB = 0b11111111;
 [e = _IOCB -> -> 255 `i `uc ]
-"191
-[; ;Master_Sensores.c: 191:     OSCCONbits.IRCF = 0b111;
+"254
+[; ;Master_Sensores.c: 254:     OSCCONbits.IRCF = 0b111;
 [e = . . _OSCCONbits 0 4 -> -> 7 `i `uc ]
-"192
-[; ;Master_Sensores.c: 192:     OSCCONbits.SCS = 1;
+"255
+[; ;Master_Sensores.c: 255:     OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"194
-[; ;Master_Sensores.c: 194:     INTCONbits.RBIF = 0;
+"257
+[; ;Master_Sensores.c: 257:     INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"195
-[; ;Master_Sensores.c: 195:     INTCONbits.RBIE = 1;
+"258
+[; ;Master_Sensores.c: 258:     INTCONbits.RBIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"196
-[; ;Master_Sensores.c: 196:     INTCONbits.GIE = 1;
+"259
+[; ;Master_Sensores.c: 259:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"197
-[; ;Master_Sensores.c: 197:     INTCONbits.PEIE = 1;
+"260
+[; ;Master_Sensores.c: 260:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"199
-[; ;Master_Sensores.c: 199:     I2C_Master_Init(100000);
+"261
+[; ;Master_Sensores.c: 261:     UART_RX_config(9600);
+[e ( _UART_RX_config (1 -> -> 9600 `i `ui ]
+"262
+[; ;Master_Sensores.c: 262:     UART_TX_config(9600);
+[e ( _UART_TX_config (1 -> -> 9600 `i `ui ]
+"264
+[; ;Master_Sensores.c: 264:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"200
-[; ;Master_Sensores.c: 200:     return;
-[e $UE 149  ]
-"201
-[; ;Master_Sensores.c: 201: }
-[e :UE 149 ]
+"265
+[; ;Master_Sensores.c: 265:     return;
+[e $UE 159  ]
+"266
+[; ;Master_Sensores.c: 266: }
+[e :UE 159 ]
 }
 [p f _sprintf 8388736 ]
-[a 5C 70 111 116 111 0 ]
-[a 1C 37 100 0 ]
-[a 2C 37 100 0 ]
-[a 3C 37 100 0 ]
-[a 4C 85 108 116 114 97 0 ]
-[a 6C 73 110 102 114 97 0 ]
+[a 3C 117 0 ]
+[a 11C 70 111 116 111 0 ]
+[a 2C 105 0 ]
+[a 1C 102 0 ]
+[a 7C 37 100 0 ]
+[a 8C 37 100 0 ]
+[a 9C 37 100 0 ]
+[a 10C 85 108 116 114 97 0 ]
+[a 12C 73 110 102 114 97 0 ]
+[a 4C 37 100 13 0 ]
+[a 5C 37 100 13 0 ]
+[a 6C 37 100 13 0 ]
